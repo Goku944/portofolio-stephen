@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephen Cabrol - Développeur Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+     <!-- Open Graph (pour Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portofolio-sc-web-code.netlify.app">
+    <meta property="og:title" content="SC WebCODE">
+    <meta property="og:description" content="Développeur Web.">
+    <meta property="og:image" content="https://portofolio-sc-web-code.netlify.app/images/landing.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://portofolio-sc-web-code.netlify.app">
+    <meta name="twitter:title" content="SC WebCODE">
+    <meta name="twitter:description" content="Développeur Web.">
+    <meta name="twitter:image" content="https://portofolio-sc-web-code.netlify.app/images/landing.png">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <h1 class="logo">SC WebCODE</h1>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="about">
+        <div class="container">
+            <h2 class="subtitle">Bienvenue sur mon site, je suis</h2>
+            <h1 class="title">Stephen Cabrol</h1>
+            <p class="tagline">Développeur Web</p>
+            <p class="description">Passionné par la création de sites modernes et performants, je vous propose de consulter mes différents projets. <br> Contactez-moi pour prendre rendez vous ensemble et définir les contours de votre projet.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn-primary">Voir mes projets</a>
+                <a href="#contact" class="btn-secondary">Me contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>Mes Projets</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <img src="images/cafe-project.png" alt="Le Coin Café">
+                    <div class="project-content">
+                        <h3>Le Coin Café</h3>
+                        <p>Landing page pour un café artisanal avec menu hamburger, formulaire fonctionnel et animations JavaScript.</p>
+                        <div class="tech-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://stephen-coffee-shop.netlify.app" target="_blank">Voir le site</a>
+                            <a href="https://github.com/TON-USERNAME/cafe-landing-page" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/projet.png" alt="Projet 2">
+                    <div class="project-content">
+                        <h3>Projet en cours...</h3>
+                        <p>D'autres projets arrivent bientôt !</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML5 / CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Responsive Design</li>
+                        <li>Flexbox / Grid</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Outils</h3>
+                    <ul>
+                        <li>Git / GitHub</li>
+                        <li>Netlify</li>
+                        <li>VS Code</li>
+                        <li>Chrome DevTools</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>En apprentissage</h3>
+                    <ul>
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>API REST</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Me Contacter</h2>
+            <form class="contact-form" name="portfolio-contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="portfolio-contact">
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre email" required>
+                <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+                <button type="submit" class="btn-primary">Envoyer</button>
+            </form>
+            <div class="contact-info">
+                <p>📧 Dev-web.cabrol@gmail.com</p>
+                <p>📍 Paris, France</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 SC WebCODE - Développeur Web </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
