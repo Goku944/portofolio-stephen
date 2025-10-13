@@ -30,3 +30,22 @@ document.querySelectorAll('.project-card, .skill-category').forEach(el => {
     el.style.transition = 'all 0.6s ease';
     observer.observe(el);
 });
+
+//Modifications chat GPT
+
+// script.js
+const words = ["Développeur Web", "Créateur d'expériences", "Passionné de design"];
+let i = 0, j = 0, currentWord = '', isDeleting = false;
+
+function type() {
+  currentWord = words[i];
+  document.getElementById("typing").textContent =
+    currentWord.substring(0, j) + (isDeleting ? '|' : '|');
+  if (!isDeleting && j++ === currentWord.length + 2) isDeleting = true;
+  else if (isDeleting && j-- === 0) {
+    isDeleting = false;
+    i = (i + 1) % words.length;
+  }
+  setTimeout(type, isDeleting ? 50 : 120);
+}
+type();
