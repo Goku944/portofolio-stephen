@@ -63,10 +63,24 @@ nav .container {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--primary), #071bb4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary);
+    animation: logoNeon 6s ease-in-out infinite;
+}
+
+@keyframes logoNeon {
+    0%, 100% { 
+        color: #2563eb;
+        text-shadow: 
+            0 0 10px rgba(37, 99, 235, 0.5),
+            0 0 20px rgba(37, 99, 235, 0.3);
+    }
+    50% { 
+        color: #60a5fa;
+        text-shadow: 
+            0 0 20px rgba(96, 165, 250, 0.8),
+            0 0 40px rgba(96, 165, 250, 0.5),
+            0 0 60px rgba(96, 165, 250, 0.3);
+    }
 }
 
 .nav-links {
@@ -102,7 +116,7 @@ nav .container {
     color: var(--primary);
 }
 
-/* ===== HERO PREMIUM ===== */
+/* ===== HERO ===== */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -113,7 +127,6 @@ nav .container {
     overflow: hidden;
 }
 
-/* Effet de grille animée en arrière-plan */
 .hero::before {
     content: '';
     position: absolute;
@@ -133,7 +146,6 @@ nav .container {
     100% { transform: translate(50px, 50px); }
 }
 
-/* Blobs animés en arrière-plan */
 .hero::after {
     content: '';
     position: absolute;
@@ -183,12 +195,13 @@ nav .container {
     opacity: 0.95;
     animation: fadeInUp 0.8s ease 0.6s backwards;
     text-align: center;
+    min-height: 2.5rem;
 }
 
 .description {
     font-size: 1.1rem;
-    max-width: 600px;
-    margin-bottom: 2rem;
+    max-width: 650px;
+    margin: 0 auto 2rem;
     opacity: 0.9;
     line-height: 1.8;
     animation: fadeInUp 0.8s ease 0.8s backwards;
@@ -200,7 +213,6 @@ nav .container {
     gap: 1rem;
     animation: fadeInUp 0.8s ease 1s backwards;
     justify-content: center;
-    text-align: center;
 }
 
 @keyframes fadeInUp {
@@ -286,9 +298,102 @@ nav .container {
     transform: translateY(-5px);
 }
 
-/* ===== PROJETS AVEC EFFET 3D ===== */
-.projects {
+/* ===== SERVICES ===== */
+.services {
     background: linear-gradient(180deg, var(--light) 0%, var(--white) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(7, 27, 180, 0.05));
+    border-radius: 50%;
+    top: -200px;
+    left: -150px;
+    animation: float 25s ease-in-out infinite;
+    filter: blur(80px);
+}
+
+.services h2 {
+    background: linear-gradient(135deg, var(--primary), #071bb4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.service-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(241,245,249,0.95));
+    border-left: 5px solid var(--primary);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle at center, rgba(37, 99, 235, 0.15), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-left-width: 8px;
+}
+
+.service-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), #071bb4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-card p {
+    color: var(--gray);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* ===== PROJETS ===== */
+.projects {
+    background: linear-gradient(180deg, var(--white) 0%, var(--light) 100%);
 }
 
 .projects h2 {
@@ -320,7 +425,7 @@ nav .container {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(7, 27, 180, 0.1));
     opacity: 0;
     transition: opacity 0.5s;
     z-index: 1;
@@ -331,7 +436,7 @@ nav .container {
 }
 
 .project-card:hover {
-    transform: translateY(-20px) rotateX(5deg);
+    transform: translateY(-20px) rotateX(3deg);
     box-shadow: 0 30px 60px rgba(0,0,0,0.2);
 }
 
@@ -339,17 +444,23 @@ nav .container {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    transition: transform 0.5s;
+    transition: all 0.5s;
 }
 
 .project-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08) rotate(1deg);
+    filter: brightness(0.85);
 }
 
 .project-content {
     padding: 2rem;
     position: relative;
     z-index: 2;
+    transition: transform 0.5s;
+}
+
+.project-card:hover .project-content {
+    transform: translateY(-5px);
 }
 
 .project-content h3 {
@@ -420,7 +531,7 @@ nav .container {
     transform: translateX(5px);
 }
 
-/* ===== COMPÉTENCES ANIMÉES ===== */
+/* ===== COMPÉTENCES ===== */
 .skills {
     background: var(--white);
     position: relative;
@@ -432,7 +543,7 @@ nav .container {
     position: absolute;
     width: 500px;
     height: 500px;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(7, 27, 180, 0.08));
     border-radius: 50%;
     top: -250px;
     left: -250px;
@@ -460,7 +571,7 @@ nav .container {
 }
 
 .skill-category {
-    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(241,245,249,0.9));
+    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(241,245,249,0.95));
     padding: 2.5rem;
     border-radius: 20px;
     border-left: 5px solid var(--primary);
@@ -478,7 +589,7 @@ nav .container {
     right: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    background: linear-gradient(45deg, transparent, rgba(37, 99, 235, 0.1), transparent);
     transform: rotate(45deg);
     transition: all 0.6s;
 }
@@ -540,7 +651,7 @@ nav .container {
     transform: rotate(90deg) scale(1.2);
 }
 
-/* ===== CONTACT GLASSMORPHISM ===== */
+/* ===== CONTACT ===== */
 .contact {
     background: linear-gradient(135deg, #667eea 0%, #071bb4 100%);
     position: relative;
@@ -625,12 +736,16 @@ nav .container {
     text-align: center;
 }
 
-.contact-info p {
-    margin: 1rem 0;
-    font-size: 1.2rem;
+.contact-info a {
     color: var(--white);
-    font-weight: 500;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s;
+}
+
+.contact-info a:hover {
+    text-decoration-color: var(--white);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* ===== FOOTER ===== */
@@ -661,11 +776,18 @@ footer {
         gap: 1.2rem;
     }
 
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
     h2 {
         font-size: 2rem;
     }
 
-    .projects-grid {
+    .projects-grid,
+    .services-grid {
         grid-template-columns: 1fr;
     }
 
@@ -676,139 +798,18 @@ footer {
     section {
         padding: 3rem 0;
     }
+
+    .service-card,
+    .skill-category {
+        padding: 2rem;
+    }
 }
 
-/*===Proposition chatGPT ====*/
-@keyframes neonPulse {
-  0%, 100% { text-shadow: 0 0 10px #7e96ff; }
-  50% { text-shadow: 0 0 20px #071bb4 ; }
-}
-.logo {
-  animation: neonPulse 2s infinite;
+/* Navigation link active */
+.nav-links a.active {
+    color: var(--primary);
 }
 
-.project-card:hover img {
-  transform: scale(1.1) rotate(1deg);
-  filter: brightness(0.8);
-}
-.project-card:hover .project-content {
-  transform: translateY(-10px);
-}
-
-.project-card::after {
-  content: "NEW";
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: var(--primary);
-  color: white;
-  padding: 0.3rem 0.7rem;
-  border-radius: 10px;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-/* ===== SERVICES ===== */
-.services {
-  background: linear-gradient(180deg, var(--light) 0%, var(--white) 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.services::before {
-  content: '';
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(7, 27, 180, 0.05));
-  border-radius: 50%;
-  top: -200px;
-  left: -150px;
-  animation: float 25s ease-in-out infinite;
-  filter: blur(80px);
-}
-
-.services h2 {
-  background: linear-gradient(135deg, var(--primary), #071bb4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  position: relative;
-  z-index: 2;
-}
-
-/* Grille fluide */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-/* Cartes stylisées façon SC WebCODE */
-.service-card {
-  background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(241,245,249,0.9));
-  border-left: 5px solid var(--primary);
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  backdrop-filter: blur(10px);
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Halo lumineux au survol */
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: -100%;
-  left: -100%;
-  width: 300%;
-  height: 300%;
-  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.15), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.6s;
-}
-
-.service-card:hover::before {
-  opacity: 1;
-  animation: pulseGlow 3s infinite ease-in-out;
-}
-
-/* Animation de halo */
-@keyframes pulseGlow {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.2); opacity: 0.5; }
-}
-
-/* Texte */
-.service-card h3 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), #071bb4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.service-card p {
-  color: var(--gray);
-  line-height: 1.7;
-  font-size: 1.05rem;
-}
-
-/* Animation d’apparition (utilise ta base fade-in-up) */
-.service-card.fade-in-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.service-card.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
+.nav-links a.active::after {
+    width: 100%;
 }
