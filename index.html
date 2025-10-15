@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stephen Cabrol - Développeur Web</title>
+    <title>Stephen Cabrol - Développeur Web Junior | Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-     <!-- Open Graph (pour Facebook, LinkedIn) -->
+    <!-- SEO -->
+    <meta name="description" content="Stephen Cabrol - Développeur Web Junior spécialisé en sites vitrines et landing pages. HTML, CSS, JavaScript. Disponible pour missions freelance.">
+    <meta name="keywords" content="développeur web, freelance, HTML, CSS, JavaScript, portfolio, sites vitrines, landing pages">
+    <meta name="author" content="Stephen Cabrol">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://portofolio-sc-web-code.netlify.app">
-    <meta property="og:title" content="SC WebCODE">
-    <meta property="og:description" content="Développeur Web.">
-    <meta property="og:image" content="https://portofolio-sc-web-code.netlify.app/images/accueil.jpg">
+    <meta property="og:url" content="https://goku944.github.io/portofolio-stephen/">
+    <meta property="og:title" content="Stephen Cabrol - Développeur Web Junior">
+    <meta property="og:description" content="Portfolio de développeur web. Création de sites vitrines et landing pages modernes.">
+    <meta property="og:image" content="https://goku944.github.io/portofolio-stephen/images/accueil.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://portofolio-sc-web-code.netlify.app">
-    <meta name="twitter:title" content="SC WebCODE">
-    <meta name="twitter:description" content="Développeur Web.">
-    <meta name="twitter:image" content="https://portofolio-sc-web-code.netlify.app/images/accueil.jpg">
-
-    <meta name="description" content="Portfolio de Stephen Cabrol, développeur web spécialisé en création de sites modernes, performants et animés.">
-    <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="twitter:url" content="https://goku944.github.io/portofolio-stephen/">
+    <meta name="twitter:title" content="Stephen Cabrol - Développeur Web Junior">
+    <meta name="twitter:description" content="Portfolio de développeur web. Création de sites vitrines et landing pages modernes.">
+    <meta name="twitter:image" content="https://goku944.github.io/portofolio-stephen/images/accueil.png">
 </head>
 <body>
     <!-- Navigation -->
@@ -34,6 +42,7 @@
             <h1 class="logo">SC WebCODE</h1>
             <ul class="nav-links">
                 <li><a href="#about">À propos</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -83,7 +92,7 @@
             <div class="projects-grid">
                 
                 <div class="project-card">
-                    <img src="images/cafe-project.png" alt="Le Coin Café">
+                    <img src="images/cafe-project.png" alt="Le Coin Café" loading="lazy">
                     <div class="project-content">
                         <h3>Le Coin Café</h3>
                         <p>Landing page pour un café artisanal avec menu hamburger, formulaire fonctionnel et animations JavaScript.</p>
@@ -94,13 +103,30 @@
                         </div>
                         <div class="project-links">
                             <a href="https://stephen-coffee-shop.netlify.app" target="_blank">Voir le site</a>
-                            <a href="https://github.com/TON-USERNAME/cafe-landing-page" target="_blank">GitHub</a>
+                            <a href="https://github.com/Goku944/cafe-landing-page" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
-
+                <!-- Moulou Foot -->
                 <div class="project-card">
-                    <img src="images/projet.png" alt="Projet 2">
+                    <img src="images/elitefoot-preview.jpg" alt="EliteFoot E-commerce" loading="lazy">
+                    <div class="project-content">
+                        <h3>EliteFoot Shop</h3>
+                        <p>Site e-commerce de maillots de football avec panier fonctionnel, personnalisation produits et design moderne. 100% JavaScript vanilla.</p>
+                        <div class="tech-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>E-commerce</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://goku944.github.io/elitefoot-shop/" target="_blank" rel="noopener noreferrer">Voir le site</a>
+                            <a href="https://github.com/Goku944/elitefoot-shop" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/projet.png" alt="Projet 2" loading="lazy">
                     <div class="project-content">
                         <h3>Projet en cours...</h3>
                         <p>D'autres projets arrivent bientôt !</p>
@@ -159,8 +185,8 @@
                 <button type="submit" class="btn-primary">Envoyer</button>
             </form>
             <div class="contact-info">
-                <p>📧 Dev-web.cabrol@gmail.com</p>
-                <p>📍 Paris, France</p>
+                <p>📧 <a href="mailto:Dev-web.cabrol@gmail.com">Me contacter par email</a></p>
+                <p class="localisation">📍 Paris, France</p>
             </div>
         </div>
     </section>
